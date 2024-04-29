@@ -10,8 +10,8 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/tijaabo/css/tijaabo.css"
-# app_include_js = "/assets/tijaabo/js/tijaabo.js"
+app_include_js =  ["tijaabo.bundle.js"]
+app_include_css = "tijaabo.bundle.css"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/tijaabo/css/tijaabo.css"
@@ -226,4 +226,6 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
+override_whitelisted_methods = {
+	"frappe.core.doctype.user.user.switch_theme": "tijaabo.overrides.user.tijaabo.switch_theme"
+}
